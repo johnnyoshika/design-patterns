@@ -15,10 +15,11 @@ namespace DesignPatterns.Builder.Director
 
         public void Build()
         {
-            Builder.Toast();
-            Builder.AddCondiments();
-            Builder.ApplyMeat();
-            Builder.ApplyCheese();
+            Builder
+                .Toast()
+                .AddCondiments()
+                .ApplyMeat()
+                .ApplyCheese();
         }
 
         public Sandwich GetSandwich() => Builder.GetSandwich();

@@ -8,10 +8,10 @@ namespace DesignPatterns.Builder.Director
     {
         protected Sandwich Sandwich { get; set; } = new Sandwich();
 
-        public abstract void Toast();
-        public abstract void AddCondiments();
-        public abstract void ApplyMeat();
-        public abstract void ApplyCheese();
+        public abstract SandwichBuilder Toast();
+        public abstract SandwichBuilder AddCondiments();
+        public abstract SandwichBuilder ApplyMeat();
+        public abstract SandwichBuilder ApplyCheese();
 
         public Sandwich GetSandwich() => Sandwich;
 
@@ -20,49 +20,57 @@ namespace DesignPatterns.Builder.Director
 
     public class HamSandwichBuilder : SandwichBuilder
     {
-        public override void AddCondiments()
+        public override SandwichBuilder AddCondiments()
         {
             Sandwich.Mayo = false;
             Sandwich.Mustard = true;
+            return this;
         }
 
-        public override void ApplyCheese()
+        public override SandwichBuilder ApplyCheese()
         {
             Sandwich.Cheese = CheeseType.Swiss;
+            return this;
         }
 
-        public override void ApplyMeat()
+        public override SandwichBuilder ApplyMeat()
         {
             Sandwich.Meat = MeatType.Ham;
+            return this;
         }
 
-        public override void Toast()
+        public override SandwichBuilder Toast()
         {
             Sandwich.Toasted = true;
+            return this;
         }
     }
 
     public class TurkeySandwichBuilder : SandwichBuilder
     {
-        public override void AddCondiments()
+        public override SandwichBuilder AddCondiments()
         {
             Sandwich.Mayo = true;
             Sandwich.Mustard = false;
+            return this;
         }
 
-        public override void ApplyCheese()
+        public override SandwichBuilder ApplyCheese()
         {
             Sandwich.Cheese = CheeseType.Cheddar;
+            return this;
         }
 
-        public override void ApplyMeat()
+        public override SandwichBuilder ApplyMeat()
         {
             Sandwich.Meat = MeatType.Turkey;
+            return this;
         }
 
-        public override void Toast()
+        public override SandwichBuilder Toast()
         {
             Sandwich.Toasted = true;
+            return this;
         }
     }
 }
