@@ -1,0 +1,4 @@
+﻿Lazy Initialization: simple but repetitive
+Virtual Proxy: effective, but can create identity problems
+Value Holder: Less abstract and more complex, but no identity problems. .Net's Lazy<T> uses this pattern
+Ghost: Less chatty (i.e. less round trips to the database for multiple lazy loaded properties), but more complex and violates SRP (Single Responsibility Pattern)
