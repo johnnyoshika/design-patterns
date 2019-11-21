@@ -1,0 +1,1 @@
+﻿Remote proxy is similar to VirtualProxy, except it's specifically uses a remote API and something like WCF to fetch the data.
